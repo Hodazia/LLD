@@ -1,9 +1,47 @@
 package DESIGN_PATTERNS.Builder;
 
 /*
+WHY WE NEED IT,
+- suppose there are 50 instance variable , but a lot of them are optional, so we want to use only specified variables
+for our use cases only, 
+- so we can think why not have multiple constructors, but it is the same problem, what if we have 50+ instance variables
+then the no. of constructors are gonna be huge,
+- The object must be assembled through multiple steps, possibly in a specific order.
+- TAKE A LOOK AT THE STRINGBUILDER CLASS, and see it is implemented via builder design pattern
+- So we define parameters in both the product class as well as Builder class, which consumes memory and is wasteful, so 
+that is a disadvantage,
+
+DEFINITION - A creational pattern, it is a step by step object creation process, 
+
+
 We are taking the example of product as Computer, 
 - it has cpu, HW, RAM, cores, gpu, storage, powersupplywatts
 - for the above we will also have a builder class to build it too
+
+Singleton is a class for which we want to ensure:
+
+Only one instance of the class exists throughout the application, and there is a globally accessible way to get that instance.
+
+it needs 3 things
+- private constructor,
+- static instance,  private static Singleton instance;
+- a public access method, 
+public static Singleton getInstance() {
+    return instance;
+}
+
+BASIC STRUCTURE
+class Singleton {
+
+    private static Singleton instance;
+    private Singleton() {
+    }
+
+    public static Singleton getInstance() {
+        return instance;
+    }
+}
+
 
 
 */
