@@ -1,0 +1,102 @@
+// 
+
+use composite design pattern, 
+It allows you to build tree-like structures (e.g., file systems, UI hierarchies, 
+organizational charts) where clients can work with both single elements and groups of
+ elements using the same interface.
+
+Two characteristics define the pattern:
+
+Uniform interface: Both leaf objects (no children) and composite objects (contain children) 
+implement the same interface. The client calls the same methods regardless of which type it is working with.
+Recursive composition: A composite holds a collection of components, which can themselves 
+be composites. This creates tree structures of arbitrary depth without any special handling.
+
+The system needs to represent:
+
+Files that have a name and a size.
+Folders that can hold files and other folders, nested to any depth.
+Your goal is to support operations such as:
+
+getSize(): returns the total size of a file or folder (sum of all contents for folders).
+printStructure(): prints the name of the item with indentation to show hierarchy.
+delete(): deletes a file or a folder and everything inside it.
+
+A straightforward solution uses two separate classes File and Folder with no shared interface.
+ The folder stores its contents as generic objects and checks the type of each item before
+  operating on it.
+
+class File {
+    private String name;
+    private int size;
+
+    public File(String name, int size) {
+        this.name = name;
+        this.size = size;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void printStructure(String indent) {
+        System.out.println(indent + name);
+    }
+
+    public void delete() {
+        System.out.println("Deleting file: " + name);
+    }
+}
+
+class Folder {
+    private String name;
+    private List<Object> contents = new ArrayList<>();
+
+    public Folder(String name) { this.name = name; }
+
+    public void add(Object item) { contents.add(item); }
+
+    public int getSize() {
+        int total = 0;
+        for (Object item : contents) {
+            if (item instanceof File) {
+                total += ((File) item).getSize();
+            } else if (item instanceof Folder) {
+                total += ((Folder) item).getSize();
+            }
+        }
+        return total;
+    }
+
+    public void printStructure(String indent) {
+        System.out.println(indent + name + "/");
+        for (Object item : contents) {
+            if (item instanceof File) {
+                ((File) item).printStructure(indent + "  ");
+            } else if (item instanceof Folder) {
+                ((Folder) item).printStructure(indent + "  ");
+            }
+        }
+    }
+
+    public void delete() {
+        for (Object item : contents) {
+            if (item instanceof File) {
+                ((File) item).delete();
+            } else if (item instanceof Folder) {
+                ((Folder) item).delete();
+            }
+        }
+        System.out.println("Deleting folder: " + name);
+    }
+}
+
+1. Repetitive Type Checks , Every operation (getSize(), printStructure(), delete()) requires 
+instanceof checks and downcasting. This logic is duplicated across every method that touches the tree.
+
+2. No Shared Abstraction , There is no common interface for File and Folder, so you cannot 
+write generic code like:
+
+3. Violation of Open/Closed Principle , To add new item types 
+(say, Shortcut or CompressedFolder), you must modify the type-checking logic in every 
+existing method. Each new type means touching every operation in the Folder class.
