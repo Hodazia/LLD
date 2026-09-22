@@ -1,0 +1,42 @@
+
+Functional requirements
+
+- user can search vehicles by: location, vehicle type, no.of seats,
+- A location can have multiple stores
+- A store has multiple vehicles
+- System supports different vehicle types
+- user can reserve an avaialble vehicle
+- System generates a bill
+- User can pay the bill
+- A vehicle cannot be reserved by 2 users for overlapping periods,
+
+Main entities
+User
+Location
+Store
+Vehicle
+Reservation
+Bill
+Payment
+
+Suppose a vehicle has:
+
+Existing reservation:
+
+10 AM -------- 2 PM
+
+User asks:
+
+1 PM -------- 4 PM
+
+This overlaps.
+
+Therefore:
+
+NOT AVAILABLE
+
+But:
+
+2 PM -------- 5 PM
+
+doesn't overlap if we use half-open intervals.

@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "main",
+      "request": "launch",
+      "mainClass": "CarRentalSystem.main",
+      "projectName": "LLD_e24f50d5"
+    },
+    {
+      "type": "java",
       "name": "LogClient",
       "request": "launch",
       "mainClass": "LoggingSystem.LogClient",
