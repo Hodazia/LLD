@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "main",
+      "request": "launch",
+      "mainClass": "Elevator.main",
+      "projectName": "LLD_e24f50d5"
+    },
+    {
+      "type": "java",
+      "name": "Elevator Demo",
+      "request": "launch",
+      "mainClass": "Questions.Elevator.main",
+      "projectName": "LLD"
+    },
+    {
+      "type": "java",
+      "name": "Decorator Demo",
+      "request": "launch",
+      "mainClass": "DESIGN_PATTERNS.Decorator.main",
+      "projectName": "LLD"
+    },
+    {
+      "type": "java",
+      "name": "Strategy Demo",
+      "request": "launch",
+      "mainClass": "DESIGN_PATTERNS.Strategy.Strtgy",
+      "projectName": "LLD"
+    }
+  ]
+}

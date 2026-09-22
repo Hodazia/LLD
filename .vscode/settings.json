@@ -1,0 +1,8 @@
+{
+  "java.project.sourcePaths": [
+    "DESIGN_PATTERNS",
+    "Questions"
+  ],
+  "java.project.outputPath": "bin",
+  "java.project.referencedLibraries": []
+}
