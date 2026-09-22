@@ -1,0 +1,5 @@
+The Strategy pattern relies on four core elements working together:
+Strategy Interface: A common interface or abstract class implemented by all variation algorithms.
+Concrete Strategies: Separate classes that implement the Strategy interface and provide the specific execution logic.
+Context: The class that maintains a reference to a Strategy object and delegates the actual execution to it.
+Client: The component that creates the Context object and passes the desired Concrete Strategy into it at runtime.

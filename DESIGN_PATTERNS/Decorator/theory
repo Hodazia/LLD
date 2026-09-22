@@ -1,0 +1,45 @@
+So we have a base object , we have some features of it, what if we want to add additional features in it,
+then we wrap it in a decorator, 
+
+You want to extend the functionality of a class without subclassing it.
+You need to compose behaviors at runtime, in various combinations.
+You want to avoid bloated classes filled with if-else logic for optional features.
+
+
+1. Class Explosion
+For every new combination of features, you need a new subclass. The number of subclasses grows exponentially: 
+n features produce 2^n - 1 combinations. With 5 formatting options (bold, italic, underline, highlight, strikethrough),
+ that is 31 subclasses, most of which are just recombinations of the same logic.
+
+2. Rigid Design
+You cannot change features at runtime. Want to let the user toggle bold on and off based on a preference? 
+You need to swap the entire object with a different subclass. There is no way to add or remove a single behavior dynamically.
+
+3. Violates the Open/Closed Principle
+Every time a new feature like highlight or shadow is introduced, you need to create new subclasses for every
+ existing combination that includes the new feature. Existing classes stay untouched, but the number of new classes 
+ you must add grows with every feature.
+
+4. Code Duplication
+The bold logic is duplicated across BoldTextView, BoldItalicTextView, BoldUnderlineTextView, and every other class 
+that includes bold. If you change how bold rendering works, you must update every class that includes it.
+
+----Decorator has four participants.
+
+Component (e.g., TextView)
+Declares the common interface that both the core object and all decorators implement.
+
+In our text rendering example, TextView is the Component. It declares a single render() method that every participant implements.
+
+ConcreteComponent (e.g., PlainTextView)
+The base object that can be wrapped with decorators. It provides the default behavior.
+
+In our example, PlainTextView renders raw text with no formatting. It is the starting point that decorators build upon.
+
+Decorator (e.g, TextDecorator)
+An abstract class that implements the Component interface and holds a reference to another Component. It forwards calls to the wrapped object.
+
+In our example, TextDecorator is the abstract base for all formatting decorators. It accepts any TextView in its constructor and delegates render() to it.
+
+ConcreteDecorator (BoldDecorator, ItalicDecorator, etc.)
+Extend the base decorator to add new functionality before/after calling the wrapped component’s method.
