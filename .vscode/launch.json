@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "DriverClient",
+      "request": "launch",
+      "mainClass": "BookMyShow.DriverClient",
+      "projectName": "LLD_e24f50d5"
+    },
+    {
+      "type": "java",
       "name": "Lock3",
       "request": "launch",
       "mainClass": "Lock3",
