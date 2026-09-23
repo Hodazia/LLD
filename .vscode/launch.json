@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Lock3",
+      "request": "launch",
+      "mainClass": "Lock3",
+      "projectName": "LLD_e24f50d5"
+    },
+    {
+      "type": "java",
+      "name": "Lock2",
+      "request": "launch",
+      "mainClass": "Lock2",
+      "projectName": "LLD_e24f50d5"
+    },
+    {
+      "type": "java",
       "name": "main",
       "request": "launch",
       "mainClass": "CarRentalSystem.main",
