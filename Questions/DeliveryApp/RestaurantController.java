@@ -5,16 +5,16 @@ import java.util.List;
 
 public class RestaurantController {
     // they are a singleton class, there shall be only 1 instance,
-    List<Restaurant> restaurants;
+    private final List<Restaurant> restaurants;
     String location;
 
     //perform CRUD operations. search based on location
-    RestaurantController()
+    public RestaurantController()
     {
         restaurants = new ArrayList<>();
     }
 
-    void add_restaurant(Restaurant restaurant)
+    public void addRestaurant(Restaurant restaurant)
     {
         restaurants.add(restaurant);
     }
@@ -24,13 +24,14 @@ public class RestaurantController {
 
     }
 
-    List<Restaurant> searchbylocation(String location)
+    List<Restaurant> searchbylocation(Location userLocation, double radius)
     {
-        // search restaurant by user location ,
+        // search restaurant by user location ,within radius radius
         List<Restaurant> filteredRestaurants = new ArrayList<>();
         for(Restaurant restaurant: restaurants)
         {
-            if(restaurant.location.equals(location))
+            double distance = restaurant.getLocation().distanceTo(userLocation);
+            if(distance<=radius)
             {
                 filteredRestaurants.add(restaurant);
             }

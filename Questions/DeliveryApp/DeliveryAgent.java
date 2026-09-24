@@ -1,35 +1,54 @@
 package DeliveryApp;
 
 public class DeliveryAgent {
-    int id;
-    String address;
-    Location location;
-    Order order;
-    boolean accept;
+    private final int id;
+    private Location location;
+    private Order order;
+    //boolean accept;
 
-    DeliveryAgent(int id,String add, Location loc)
+    public DeliveryAgent(int id, Location location)
     {
         this.id = id;
-        this.address = address;
         this.location = location;
         this.order = null;
-        this.accept = false;
     }
 
-    void accept_order(Order e)
-    {
-        // for now accept one order
-        if(order!=null)
-        {
-            this.order = e;
-            accept = true;
+    public boolean isAvailable() {
+        return order == null;
+    }
+
+    public boolean acceptOrder(Order order) {
+
+        if (!isAvailable()) {
+            return false;
         }
+
+        this.order = order;
+        return true;
     }
 
-    void calculate_distance()
-    {
-        // find the distance between current driever location and restaurant location
+    public void completeOrder() {
+        this.order = null;
     }
 
+    public double distanceFrom(Location location) {
+        return this.location.distanceTo(location);
+    }
+
+    public void updateLocation(Location location) {
+        this.location = location;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
 
 }
