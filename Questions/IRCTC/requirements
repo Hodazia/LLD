@@ -1,0 +1,97 @@
+
+Login 
+
+Actor ->
+Admin - add,cancel trains, 
+Customers -> 
+Promoters/Partners -> food delivery guys,
+
+it is not just about trains, bus, hotels, taxis, flight
+Travel packages, holiday itenaries,
+
+TrainController, 
+
+1. actor -> admin , customers, partners etc.
+2. Train/Bus/Hotel/taxi/flight/
+3. Travel packages, holidays itinerary.
+4. login -> search for train
+5. select train ( enter passenger info - seat type preference ) -> payment.
+6. tickets.
+7. Implement for trains, but solution should be extendable to bus/txi etc.
+
+IRCTC :
+Trains
+TrainJourney :  is searchable entity,  : search -> source-destination, time, train
+
+
+- search for trains,
+- select train , passenger info, available seats, seatType , BirthSide , 
+- 
+
+
+Factory - for different type of tickets - tatkal, seats , type of trains,
+Vehicle type, 
+
+we can use factory in all design patterns, if nothing u can use factory or singleton,
+if ever stuck in an interview,
+
+enum TicketType {
+
+}
+
+Abstract Factory -> 
+payment factory -> phonpefactory, razorpay factory,
+
+NetBanking payment -> phonepe netbanking, razorpay 
+CreditCard -> 
+UPi payment
+
+Builder -> 
+multi step itenaries ->hotel meals,places to visit, 
+the user should decide this,
+making the vehicle ready for booking, 
+
+
+
+Singleton -> 
+PaymentGateway, System, Facade
+
+Prototype -> 
+is cloning better than creating!!
+itenary -> 
+creating a hotel from the first time,
+Booking multiple seats, each of them can have something in common,
+
+
+
+
+-------
+Train, if it runs 7 days a week
+train journey 
+for every journey the seatallotment will be different, time will be different
+Train number is same, but the journey will be different, 
+
+
+Trainjourney has trains,or train has Trainjourney , 
+Seeing the status of the train is not IRCTC , but rather of 
+---
+
+observer design -> 
+after the ticket is booked, booking status
+Train status , 
+Payment status
+
+notification, sms, email,
+
+Command -> 
+
+iterator -> view bookings, city, trains, 
+
+strategy -> payment strategy, search trains
+
+Multit threading??
+seat booking problem, if we try to book a seat, it should be booked by 1 person,
+not by multiple person, even if others want to buy it.
+Does locking make a system slower, 
+
+
