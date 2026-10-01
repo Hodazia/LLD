@@ -5,9 +5,9 @@ public enum SeatType {
 }
 
 
-enum BookingStatus {
-    PENDING, CONFIRMED, FAILED, CANCELLED
-}
+// enum BookingStatus {
+//     PENDING, CONFIRMED, FAILED, CANCELLED
+// }
 
 // enum JourneyStatus {
 //     SCHEDULED, CANCELLED

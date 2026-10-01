@@ -134,4 +134,12 @@ class SeatInventory{
             }
         }
     }
+
+    int availableSeats() {
+        synchronized (lock) {
+            return (int) seats.values().stream()
+                    .filter(s -> s.status == SeatStatus.AVAILABLE)
+                    .count();
+        }
+    }
 }

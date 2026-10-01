@@ -7,17 +7,17 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class TrainJourney {
-    private final String journeyId;
-    private final Train train;
-    private final LocalDate journeyDate;
-    private final String source;
-    private final String destination;
-    private final LocalDateTime departure;
-    private final LocalDateTime arrival;
+    final String journeyId;
+    final Train train;
+    final LocalDate journeyDate;
+    final String source;
+    final String destination;
+    final LocalDateTime departure;
+    final LocalDateTime arrival;
 
     JourneyStatus status = JourneyStatus.SCHEDULED;
 
-    private final SeatInventory inventory;
+    final SeatInventory inventory;
 
     TrainJourney(String journeyId, Train train,
                  LocalDate journeyDate,

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Train {
      final String trainNumber;
-    private final String name;
+    final String name;
      final List<Coach> coaches;
 
     Train(String trainNumber, String name, List<Coach> coaches) {

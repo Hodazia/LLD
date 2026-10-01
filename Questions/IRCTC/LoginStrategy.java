@@ -38,8 +38,8 @@ class LoginManager {
         this.strategy = null;
     }
 
-    void setLoginStrategy(int strategy)
-    {
-        if(strategy == )
-    }
+    // void setLoginStrategy(int strategy)
+    // {
+    //     if(strategy == )
+    // }
 }
