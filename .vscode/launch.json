@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Driver",
+      "request": "launch",
+      "mainClass": "CoffeeMachine.Driver",
+      "projectName": "LLD_e24f50d5"
+    },
+    {
+      "type": "java",
       "name": "SeatLockingDemo",
       "request": "launch",
       "mainClass": "IRCTC.SeatLockingDemo",
