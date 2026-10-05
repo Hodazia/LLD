@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Questions/AirlineManagementSystem/AirlineManagementSystem.iml" filepath="$PROJECT_DIR$/Questions/AirlineManagementSystem/AirlineManagementSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CONCURRENCY/CONCURRENCY.iml" filepath="$PROJECT_DIR$/CONCURRENCY/CONCURRENCY.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DESIGN_PATTERNS/DESIGN_PATTERNS.iml" filepath="$PROJECT_DIR$/DESIGN_PATTERNS/DESIGN_PATTERNS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LLD.iml" filepath="$PROJECT_DIR$/LLD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Questions/Questions.iml" filepath="$PROJECT_DIR$/Questions/Questions.iml" />
+    </modules>
+  </component>
+</project>

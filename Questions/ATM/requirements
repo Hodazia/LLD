@@ -1,0 +1,11 @@
+
+withdraw amount is the request, 
+3000, 
+2k rupees processor -> 500 rupess processor -> 1000 rupees processor,
+
+
+user 
+user bank account
+card
+ATM, 
+ATM Card interface , states, idle state, hascard state,
