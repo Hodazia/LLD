@@ -1,0 +1,33 @@
+
+Two Players: The game is played between two players.
+Board: The game uses a NxN board.
+Turns: Players take turns to place their symbol (X or O) on the board.
+Win Condition: The game detects when a player has won (three in a row, column, or diagonal).
+Draw Condition: The game detects when the board is full and the game is a draw.
+Input Validation: The game prevents moves to already occupied cells.
+Extensibility: Easy to change the board size or add new features.
+
+Game: Manages the game flow, player turns, and game status.
+Board: Represents the NxN grid and provides methods to update and check the board.
+Cell: Represents a single cell on the board.
+Player: Represents a player with a name and symbol.
+Symbol: Enum for X and O.
+GameStatus: Enum for IN_PROGRESS, DRAW, WIN.
+
+how can one win, if same peice exists in entire 1 row, 1 column or a diagonal
+Entities
+PieceType -> enum for X and O, extensible ,
+PlayingPiece -> 
+{
+PieceType piece, 
+PlayingPiece(PieceType type)
+}
+
+PlayingPieceX , PlayingPieceY
+
+Board -> has 2-d array of pieces , 
+Player -> PlayingPiece piece , 
+each player has a piece like X or O, that he plays,
+
+Game , has players, has board
+List<Players> , Board , 
