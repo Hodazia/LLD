@@ -1,0 +1,85 @@
+users, songs, albums, artists, playlists, search, library, queue, and playback controls. 
+I'll support multiple playback strategies such as normal, shuffle and repeat
+
+User
+A user can:
+- Create an account
+- Have a library
+- Create playlists
+- Like/unlike songs
+- Follow artists
+Music
+The platform contains:
+- Artists
+- Albums
+- Songs
+A song belongs to: Artist, album
+
+Search - users can search song, artist, album
+
+Playlist - user can create playlist, add songs,remove song,view songs
+
+Player
+User can: 
+play()
+pause()
+resume()
+stop()
+next()
+previous()
+
+Queue
+User can:
+addToQueue()
+removeFromQueue()
+clearQueue()
+
+STOPPED
+    |
+    | play()
+    ↓
+PLAYING
+    |
+    | pause()
+    ↓
+PAUSED
+
+
+The next song depends on the playback mode.
+Normal:
+A → B → C → D
+
+Shuffle:
+A → D → B → C
+
+Repeat one:
+A → A → A → A
+
+Instead of:
+if (mode == NORMAL) ...
+else if (mode == SHUFFLE) ...
+else if (mode == REPEAT) ...
+
+we create:
+PlaybackStrategy
+       |
+       +---- NormalPlayback
+       +---- ShufflePlayback
+       +---- RepeatOnePlayback
+
+-- if needed try to use interfaces also somewhere or abstract classes in the design and code
+
+we need to implement concurrency also
+Thread 1 → play()
+Thread 2 → pause()
+Thread 3 → next()
+Thread 4 → addToQueue()
+Thread 5 → clearQueue()
+
+A player's state, current song and queue together form one logical unit. Therefore, I will protect player mutations using a single lock. I don't want independent locks for state and queue because that can lead to inconsistent snapshots or lock-ordering problems.
+
+
+users be able to follow artists and get notified when a new album is released?
+Candidate: Do we want to show song recommendations?
+
+Interviewer: Yes. Include a simple recommendation engine. For now, simulate genre-based or randomized recommendations.

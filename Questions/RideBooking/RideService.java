@@ -1,7 +1,8 @@
 package RideBooking;
 
 import java.util.List;
-import java.util.ArrayList;;
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class RideService {
     // private final DriverRepository driverRepository;
@@ -11,8 +12,7 @@ public class RideService {
     private final RideRepository rideRepository;
     private final PricingStrategy pricingStrategy;
 
-    private final AtomicLong rideIdGenerator =
-            new AtomicLong(1);
+    private final AtomicLong rideIdGenerator = new AtomicLong(1);
 
     public RideService(
             DriverRepository driverRepository,
@@ -24,38 +24,52 @@ public class RideService {
         this.pricingStrategy = pricingStrategy;
     }
 
-    public Ride requestRide(Rider rider,Location source,Location destination)
-    {
-        Ride ride = new Ride(
+    public Ride requestRide(
+        Rider rider,
+        Location source,
+        Location destination
+) {
+
+    Ride ride = new Ride(
             "RIDE-" + rideIdGenerator.getAndIncrement(),
             rider,
             source,
             destination
-        );
+    );
 
-        double fare = pricingStrategy.calculateFare(source,destination);
-        ride.setFare(fare);
+    double fare = pricingStrategy.calculateFare(
+            source,
+            destination
+    );
 
-        List<Driver> drivers = driverRepository.findNearbyAvailableDrivers(source);
-        for (Driver driver : drivers) {
+    ride.setFare(fare);
 
-            /*
-             * Multiple ride requests may have received
-             * the same driver in their candidate list.
-             *
-             * tryAssignRide() is thread-safe.
-             */
-            if (driver.tryAssignRide(ride)) {
+    List<Driver> drivers =
+            driverRepository
+                    .findNearbyAvailableDrivers(source);
 
-                ride.assignDriver(driver);
-                rideRepository.save(ride);
-                return ride;
-            }
-            throw new IllegalStateException(
-                "No driver available"
-        );
+    for (Driver driver : drivers) {
+
+        /*
+         * Multiple ride requests may have received
+         * the same driver in their candidate list.
+         *
+         * tryAssignRide() is thread-safe.
+         */
+        if (driver.tryAssignRide(ride)) {
+
+            ride.assignDriver(driver);
+
+            rideRepository.save(ride);
+
+            return ride;
         }
     }
+
+    throw new IllegalStateException(
+            "No driver available"
+    );
+}
 
     public void startRide(String rideId)
     {
