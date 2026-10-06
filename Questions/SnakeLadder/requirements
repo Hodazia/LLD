@@ -1,0 +1,17 @@
+
+Entities
+
+Snake - start, end
+Ladders - start, end
+Dice - it can be 1 or two
+Board  - n*n , 10*10,
+Players, player 1 , 2 , 3, ....
+Winning condition - whoever reaches n*n first, 
+
+
+
+- how many players can play, many can play 
+- we can add as many snakes and ladders, during setup time we should be able dynamically define, take user input
+- 
+
+Snake and Ladders both have start and end, we can have an abstract class for this
