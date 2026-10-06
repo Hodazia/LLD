@@ -11,6 +11,11 @@ public class Game {
     Deque<Player> players;
     Board gameBoard;
 
+    Game()
+    {
+        initialize();
+    }
+
     public void initialize()
     {
         players = new LinkedList<>();

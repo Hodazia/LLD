@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "solution",
+      "request": "launch",
+      "mainClass": "LRUCache.solution",
+      "projectName": "LLD_e24f50d5"
+    },
+    {
+      "type": "java",
       "name": "Client",
       "request": "launch",
       "mainClass": "Spotify.Client",
