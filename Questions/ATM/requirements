@@ -1,4 +1,23 @@
 
+FLOW
+user comes with a card, goes to the atm, he inserts the card , ATM will authenticate PIN, 
+it will give certain operations options like withdraw cash, check balance, change pin, 
+then user performs one operation at a time,  and then exits .
+
+IDLE state , -> no card is inserted, we can insert the card
+HasCard -> enter the pin and authenticate it
+Selection -> check any of the operations 
+Money Dispense state -> 
+
+Cash withdrawl
+
+2K note, 500 note, 1K note, 
+
+Suppose we want 3000 , first it goes to 2K processor then 500 processor , 
+
+
+
+
 withdraw amount is the request, 
 3000, 
 2k rupees processor -> 500 rupess processor -> 1000 rupees processor,
