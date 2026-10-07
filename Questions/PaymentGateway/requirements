@@ -1,0 +1,18 @@
+
+instrunment -> bank card
+
+in a wallet i can add multiple instrunment like bank1, bank2, card
+
+- make payment from user1 to user 2
+search user, to whom amount need to be transferred
+select amount and funding instrunment
+pass info to processor
+
+- notification for operations like add/remove user, debit paymennt, credit paymentu
+- users able to see the transaction history
+
+Entity
+user, instrunment, transaction, transaction history, notification, processor
+
+Request comes in the form of userDO, it is a pojo class, 
+it helps in inserting the data to the DB, it is like pydantic validation in python
