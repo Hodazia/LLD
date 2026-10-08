@@ -1,0 +1,110 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "solution",
+      "request": "launch",
+      "mainClass": "LRUCache.solution",
+      "projectName": "LLD_e24f50d5"
+    },
+    {
+      "type": "java",
+      "name": "Client",
+      "request": "launch",
+      "mainClass": "Spotify.Client",
+      "projectName": "LLD_e24f50d5"
+    },
+    {
+      "type": "java",
+      "name": "Driver",
+      "request": "launch",
+      "mainClass": "CoffeeMachine.Driver",
+      "projectName": "LLD_e24f50d5"
+    },
+    {
+      "type": "java",
+      "name": "SeatLockingDemo",
+      "request": "launch",
+      "mainClass": "IRCTC.SeatLockingDemo",
+      "projectName": "LLD_e24f50d5"
+    },
+    {
+      "type": "java",
+      "name": "IRCTCDemo",
+      "request": "launch",
+      "mainClass": "IRCTC.IRCTCDemo",
+      "projectName": "LLD_e24f50d5"
+    },
+    {
+      "type": "java",
+      "name": "Client",
+      "request": "launch",
+      "mainClass": "DeliveryApp.Client",
+      "projectName": "LLD_e24f50d5"
+    },
+    {
+      "type": "java",
+      "name": "DriverClient",
+      "request": "launch",
+      "mainClass": "BookMyShow.DriverClient",
+      "projectName": "LLD_e24f50d5"
+    },
+    {
+      "type": "java",
+      "name": "Lock3",
+      "request": "launch",
+      "mainClass": "Lock3",
+      "projectName": "LLD_e24f50d5"
+    },
+    {
+      "type": "java",
+      "name": "Lock2",
+      "request": "launch",
+      "mainClass": "Lock2",
+      "projectName": "LLD_e24f50d5"
+    },
+    {
+      "type": "java",
+      "name": "main",
+      "request": "launch",
+      "mainClass": "CarRentalSystem.main",
+      "projectName": "LLD_e24f50d5"
+    },
+    {
+      "type": "java",
+      "name": "LogClient",
+      "request": "launch",
+      "mainClass": "LoggingSystem.LogClient",
+      "projectName": "LLD_e24f50d5"
+    },
+    {
+      "type": "java",
+      "name": "main",
+      "request": "launch",
+      "mainClass": "Elevator.main",
+      "projectName": "LLD_e24f50d5"
+    },
+    {
+      "type": "java",
+      "name": "Elevator Demo",
+      "request": "launch",
+      "mainClass": "Questions.Elevator.main",
+      "projectName": "LLD"
+    },
+    {
+      "type": "java",
+      "name": "Decorator Demo",
+      "request": "launch",
+      "mainClass": "DESIGN_PATTERNS.Decorator.main",
+      "projectName": "LLD"
+    },
+    {
+      "type": "java",
+      "name": "Strategy Demo",
+      "request": "launch",
+      "mainClass": "DESIGN_PATTERNS.Strategy.Strtgy",
+      "projectName": "LLD"
+    }
+  ]
+}

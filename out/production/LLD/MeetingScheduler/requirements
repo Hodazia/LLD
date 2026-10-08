@@ -1,0 +1,99 @@
+
+Scheduler - the one who schedules the meeting
+People for whom meeting is scheduled
+
+
+- person should be able to schedule a meeting, invite the participants
+- after inviting, beeing the meeting admin, he should be able to remove the participants,
+this should be before the meeting
+- Reminders to the participants
+- updates about the meeting, cancel the meeting
+- Mark attendees optional, 
+
+INVITEE
+- accept, reject the invite
+- check the availability of the invitee, their calender as well,
+- status of the invite,
+- should be notified about the meeting , 
+- 
+
+Calender [0-23]
+
+
+MeetingSchedulerSystem{
+    // user will call the
+    AttendeeSystem,
+    SchedulerSystem 
+}
+
+AttendeeSystem
+{
+
+}
+
+SchedulerSystem{
+
+}
+
+interface Meeting {
+    // schedule a meeting
+}
+
+instantMeeting implements Meeting{
+
+}
+
+RecurrenceMeeting implements Meeting{
+    // if a meeting anyone gets cancelled, 
+    let's say we have 30 meetings, 
+    we can have a map of Meetings and Date, we can cancel a meeting
+    // we shall have only 1 object of recurrenceMeeting, 
+
+    what if the meeting is for forever, no stop date, then how we handle that,
+    then how long can our map or list be, it is gonna exceed the size of list,
+    so for that case we do not use any list,
+
+    boolean lifeTime,
+
+}
+
+MeetingManager { 
+    // Meeting -> aggregation
+}
+
+interface notification system {
+
+}
+
+// mobile,SMS, email
+i would want my meeting notification to go to all the invitees,
+
+HOW TO BUILD THE NOTIFIER SYSTEM?
+-----------
+
+subject and observres
+subject - 
+observers - 
+
+
+notification subject{
+    notifyall() // all users has to be notified,
+    Map of users and which notifications they have subscribed to
+    map<Users, Notification> map;
+    //map.add(user, SMSNotification)
+
+    notifyall()
+    {
+        map.get(user).notify()
+    }
+}
+
+a user at the starting can set up what kind of notifications he wants,
+
+no need for individual vs corporate user, 
+groupmailids,  we can have an addmemebertogrpup()
+Map<groupmail_id, List<Users mail_id> >;
+
+class User {
+
+}

@@ -1,0 +1,16 @@
+What we want? Requirements
+
+Design bookmyshow,
+Concurrency Management, make sure that one ticket does not get allocated to more han
+1 user,
+
+user -> will submit a location/city to book ticketes, 
+For that city what are the available movie , 
+now hwen a user clicks a movie M1, thenthe shows are shown in the theatres
+Differne ttheatres are shown, and all their available shows,
+Then once he choses theatre T1, then he choses Seat, suppose he chosesS32,
+then he does the Booking and then Payment,
+
+Entities
+User, Movie, City, Show, Theatre, Screen, TheatreContoller - manages theatres,
+Payment, Booking, Seats, 

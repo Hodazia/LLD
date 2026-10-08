@@ -1,0 +1,45 @@
+Rider requests ride → find nearby available driver → atomically assign driver → calculate fare →
+ ride progresses through states → complete ride.
+
+ I would use exactly 2 patterns in the implementation:
+1. Strategy → pricing
+2. State → ride lifecycle
+
+
+What is the most important concurrency problem?
+Two users can simultaneously request rides and both see Driver A as available.
+Driver A is available
+
+Rider 1 ──────┐
+              ├──> Driver A
+Rider 2 ──────┘
+
+We must guarantee:
+A driver can belong to at most one active ride.
+
+Therefore, driver assignment must be an atomic check-and-change operation.
+
+- even if a driver has taken a ride, but he does gets notified of a new ride, now it is up to him to take that ride or not,
+
+
+Rider
+- Register rider
+- Request a ride
+- Cancel a ride
+- View current ride
+Driver
+- Register driver
+- Go online/offline
+- Update location
+- Become available/unavailable
+Ride
+- Create ride
+- Match nearby driver
+- Start ride
+- Complete ride
+- Cancel ride
+- Calculate fare
+Pricing
+Support different pricing models:
+- Normal pricing
+- Surge pricing

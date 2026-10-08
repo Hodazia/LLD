@@ -1,0 +1,11 @@
+a vehicle comes at the entrance gate,  a ticket gets generated ,  vehicle gets into the parking spot,
+and when he exits the parking spot, he does the payment,
+
+in parking area , how many entrances we have , lets say 1 entrance and 1 exit for SIMPLICITY,
+but we have to make the code scalable, 
+
+different types of spots, 
+- 2-wheeler
+- 4-wheeler 
+
+find nearest parking sport from the entrance gate.

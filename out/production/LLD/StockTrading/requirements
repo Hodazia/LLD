@@ -1,0 +1,121 @@
+All stocks are listed in NSE/BSE
+When we want to buy stocks, we buy via stock brokers like zerodha, grow, 
+
+when we open th app, we have our favorite stocks like waitlist,
+favorite stocks which we can monitor, 
+
+for buying,selling stocks we can have funds/money/Crypto's and others
+
+Portfolio -> all the stocks that we have bought,
+Holdings -> all our stocks we have at the moment
+
+Design a system for buy and sell stock,
+A stock-broker platform like Zerodha/Groww that allows users to maintain watchlists, deposit/withdraw funds, place market/limit orders, execute trades against an exchange, and maintain portfolio/lot-level holdings. 
+Stock - price, quantity, Increase/Decrease from previous day, % 
+types of order
+Market order- > simple buying or selling stock
+Limit order-> i want to buy a stock at a particular price only,
+we can tell our stock broker, once the stock reaches this price, buy or sell the stock
+
+
+user, order, OrderType enum {Market, LIMIT}, ExcahngeType {NSE,BSE}, OrderStatus, 
+BankAccount , Stock , 
+
+
+user {id, name, funds, setfunds(), List<Stock>, Watchlist
+- deposit money,
+- withdraw money, 
+- view funds
+- buy stocks and sell stocks
+placeOrder(OrderType, List<StockItem> si); // BUYING A STOCK
+// we can place order of different stock of different quantities
+// validate if we even have available balance for buying the stock
+// swithc case to imp
+
+sellStock(OrderType, List<StockItem>, )
+// if at market share, then deduct all the stockitem from the stocks,
+// update the portfolio 
+//  
+
+// if at limit share, then check the current price of stock and if it exceeds matches
+it , then only sell else no, 
+
+-> create multiple watchlists, add/remove stocks, mmonitor stock prices
+
+}
+
+StockItem {
+    Stock st;
+    int item;
+}
+
+Watchlist {
+    id,
+    String name
+    List<StockItem> favouritestocks;
+
+    void addStockToWatchlist(Stock stock, long watchlistId);
+    void removeStockFromWatchlist(Stock stock, long watchlistId);
+    void getWatchlistById(long watchlistId);
+}
+
+userManager {
+    List<user> users;
+    // CRUD
+    // 
+
+}
+
+ExcahngeCommunicator {
+    // this is the broker e.g. Zerodha
+    List<Stock> stocks;
+    //CRUD
+    List<User> user;
+    // we can have a singleton design pattern for this, only 1 instance shall exist
+
+}
+
+// we can have a separate stock service to perform CRUD also
+StockService { 
+    //CRUD
+}
+
+Portfolio {
+    user us;
+    List<StockItem> st; 
+    void addStock(Stock stock, long portfolioId);
+    void removeStock(Stock stock, long portfolioId);
+    void updateStockDetails(Stock stock, long portfolioId);
+
+}
+
+BankAccount {
+    int id;
+    BankType 
+    double amount, //
+}
+
+
+Stocks {
+    id
+    name
+    listedwhere , NSE/BSE
+    price,
+}
+
+Order {
+
+}
+
+OrderExecutor {
+
+}
+
+
+
+- customer can buy/sell stocks
+- see portfolio-> (holdings -> stock pricing)
+- can have multiple watchlists containing multiple stock quotes.
+- Users should be able to place stock trade orders of the following types: 1) market 2) limit order.
+- Users can have multiple ‘lots’ of a stock. This means that if a user has bought a stock multiple times, the system should be able to differentiate between different lots of the same stock.
+- Users should be able to deposit and withdraw money either via check, wire, or electronic bank transfer.
